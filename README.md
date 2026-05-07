@@ -3,6 +3,8 @@
 5問の質問に答えるだけで、自分にぴったりの「家計改善ポイント」がわかる診断ツール。
 インスタ・ブログ・一斉配信からの動線として使える静的サイト。
 
+**🚀 本番URL：** https://hiroki08083524-boop.github.io/setsuyaku-shindan/
+
 ## 構成
 
 - 純粋な HTML + Vanilla JavaScript + Tailwind CSS（CDN）
@@ -80,17 +82,32 @@ cp "/path/to/dacchooo-icon.png" \
 # その後、各HTML/JSの `dacchooo.svg` を `dacchooo.png` に置換
 ```
 
-## デプロイ手順（Cloudflare Pages）
+## デプロイ
 
-1. このディレクトリをGitHubリポジトリとして公開（プライベートでもOK）
-2. [Cloudflare Pages](https://pages.cloudflare.com/) にログイン → 「Create a project」
-3. GitHubと連携 → 該当リポジトリを選択
-4. ビルド設定：
+### 現在：GitHub Pages（即時デプロイ済み）
+
+リポジトリ Settings > Pages で `main` ブランチの `/ (root)` を Source に設定するだけ。
+mainにpushすると自動で再ビルド→反映される（数十秒）。
+
+```bash
+git add .
+git commit -m "Update content"
+git push
+# → 数十秒後に https://hiroki08083524-boop.github.io/setsuyaku-shindan/ に反映
+```
+
+### 将来：Cloudflare Pages に移行する場合
+
+短いURL（`xxx.pages.dev`）と高速CDNが欲しくなったら：
+
+1. [Cloudflare Pages](https://pages.cloudflare.com/) にログイン → 「Create a project」
+2. GitHub と連携 → このリポジトリを選択
+3. ビルド設定：
    - Framework preset：**None**
    - Build command：（空欄）
-   - Build output directory：`/`（または `setsuyaku-shindan`）
-5. 「Save and Deploy」→ `xxx.pages.dev` で公開
-6. カスタムドメイン設定したい場合：「Custom domains」から追加
+   - Build output directory：`/`
+4. 「Save and Deploy」→ `setsuyaku-shindan.pages.dev` で公開
+5. GitHub Pages のリンクは残してもOK、Cloudflare Pages に動線を切り替えるだけ
 
 ## 動線への組み込み
 

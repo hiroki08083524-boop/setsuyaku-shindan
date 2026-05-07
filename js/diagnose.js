@@ -86,12 +86,12 @@ function onBack() {
 }
 
 function finishDiagnose() {
-  const typeId = computeType(answers, questions);
-  saveResultType(typeId);
+  const ranking = computeRanking(answers, questions);
+  saveResultRanking(ranking);
   window.location.href = 'result.html';
 }
 
-function computeType(answers, questions) {
+function computeRanking(answers, questions) {
   const scores = { A: 0, B: 0, C: 0, D: 0, E: 0 };
   for (const q of questions) {
     const selected = answers[q.id];
@@ -102,17 +102,14 @@ function computeType(answers, questions) {
       scores[type] = (scores[type] || 0) + weight;
     }
   }
-  // 最大値のタイプ。同点はA→B→C→D→Eの順で先勝ち
+  // 同点はA→B→C→D→Eで先勝ち（順序を保ちつつスコア降順）
   const order = ['A', 'B', 'C', 'D', 'E'];
-  let best = 'A';
-  let bestScore = -1;
-  for (const t of order) {
-    if (scores[t] > bestScore) {
-      bestScore = scores[t];
-      best = t;
-    }
-  }
-  return best;
+  return order
+    .map((id) => ({ id, score: scores[id] }))
+    .sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      return order.indexOf(a.id) - order.indexOf(b.id);
+    });
 }
 
 document.addEventListener('DOMContentLoaded', initDiagnose);
