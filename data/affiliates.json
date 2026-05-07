@@ -1,0 +1,97 @@
+{
+  "_note": "全案件にPR表記必須。体験済み案件のみ掲載（feedback_unexperienced_affiliate_priority準拠）。リンクはインスタ・メイン用（m=mi1h5y31sj1f系）。",
+  "_lastUpdated": "2026-05-06",
+  "affiliates": {
+    "gfs": {
+      "name": "GFS無料講座",
+      "tagline": "投資の基礎を無料動画でサクッと学べる",
+      "category": "投資スクール（無料）",
+      "url": "https://dacchooo-money.com/bafessa/",
+      "features": [
+        "完全無料の動画講座",
+        "投資の基礎が体系的に学べる",
+        "登録は1分で完了"
+      ],
+      "characterComment": "ぼくも最初はGFSで投資を学びました。完全無料で体系立てて学べるのが本当に有り難い。",
+      "experienced": true
+    },
+    "skillskip": {
+      "name": "スキルスキップ",
+      "tagline": "副業デビューに最適なオンラインスクール",
+      "category": "オンラインスクール",
+      "url": "https://skillskip.jp/lp1388",
+      "features": [
+        "副業ノウハウを体系的に学べる",
+        "無料体験から始められる",
+        "受講生コミュニティあり"
+      ],
+      "characterComment": "ぼくも無料体験を受けました。副業を本気で始めたい人には、独学より圧倒的に近道です。",
+      "experienced": true
+    },
+    "money-career-default": {
+      "name": "マネーキャリア（FP無料相談）",
+      "tagline": "プロのFPに家計を見てもらえる無料相談",
+      "category": "FP無料相談",
+      "url": "https://money-career.com/reserve_lp2?adid=first&source=ig&medium=dacchooo_money&campaign=stories",
+      "features": [
+        "完全無料で何度でも相談OK",
+        "オンラインで自宅から完結",
+        "保険の押し売りなし"
+      ],
+      "characterComment": "ぼくも実際に使いました。第三者の目線で家計を見てもらうのは、本当に効きます。",
+      "experienced": true
+    },
+    "money-career-nisa": {
+      "name": "マネーキャリア（新NISA相談）",
+      "tagline": "新NISAの始め方をプロに相談",
+      "category": "FP無料相談・新NISA",
+      "url": "https://money-career.com/service/consultation/nisa?source=ig&medium=dacchooo_money&campaign=stories",
+      "features": [
+        "新NISAの口座開設から商品選びまで",
+        "完全無料・オンライン対応",
+        "中立的なアドバイス"
+      ],
+      "characterComment": "「新NISAって何から始めればいいの？」を解消してくれます。無料なので使わない手はないです。",
+      "experienced": true
+    },
+    "money-career-lifeplan": {
+      "name": "マネーキャリア（ライフプラン相談）",
+      "tagline": "将来の家計シミュレーションを無料で",
+      "category": "FP無料相談・ライフプラン",
+      "url": "https://money-career.com/service/consultation/lifeplan?source=ig&medium=dacchooo_money&campaign=stories",
+      "features": [
+        "将来の収支をシミュレーション",
+        "教育費・老後資金の準備度がわかる",
+        "完全無料"
+      ],
+      "characterComment": "「将来お金足りるかな？」がモヤモヤある人には絶対オススメ。具体的な数字で安心できます。",
+      "experienced": true
+    },
+    "torches": {
+      "name": "TORCHES",
+      "tagline": "1万円から始められる不動産少額投資",
+      "category": "不動産クラウドファンディング",
+      "url": "https://stair-s.com/link.php?i=pi7ksr2surwb&m=mi1h5y31sj1f",
+      "features": [
+        "1万円から投資可能",
+        "プロが厳選した案件のみ",
+        "口座開設は無料"
+      ],
+      "characterComment": "ぼくも口座開設しました。少額で不動産に分散できるのは、株だけのリスクを下げるのに効きます。",
+      "experienced": true
+    },
+    "rakutama": {
+      "name": "らくたま",
+      "tagline": "気軽に始められる不動産クラファン",
+      "category": "不動産クラウドファンディング",
+      "url": "https://stair-s.com/link.php?i=pi44h0dyxhrq&m=mi1h5y31sj1f",
+      "features": [
+        "1万円から投資可能",
+        "シンプルなUIで初心者向け",
+        "短期運用案件もあり"
+      ],
+      "characterComment": "ぼくも過去に使いました。とにかく分かりやすいので、不動産クラファン入門として◎です。",
+      "experienced": true
+    }
+  }
+}

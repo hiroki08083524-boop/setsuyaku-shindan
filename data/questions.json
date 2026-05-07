@@ -1,0 +1,88 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "step": 1,
+      "title": "ご家族の構成を教えてください。",
+      "subtitle": "家族の状況で「節約のきき所」が変わります。",
+      "characterMessages": [
+        "まずは基本情報から！家族構成によって、削れる支出のポイントが変わってきます。"
+      ],
+      "options": [
+        { "value": "single", "label": "一人暮らし", "subtext": "自分の支出だけ管理", "weights": { "A": 2, "D": 2, "E": 2 } },
+        { "value": "couple", "label": "夫婦のみ", "subtext": "二人で家計を管理", "weights": { "A": 3, "B": 2 } },
+        { "value": "family", "label": "夫婦＋子ども", "subtext": "教育費もこれから", "weights": { "A": 3, "D": 3 } },
+        { "value": "with_parents", "label": "親と同居", "subtext": "実家暮らし", "weights": { "B": 2, "C": 2, "E": 2 } },
+        { "value": "other", "label": "その他", "subtext": "複雑な家計", "weights": { "A": 1, "B": 1, "C": 1, "D": 1, "E": 1 } }
+      ]
+    },
+    {
+      "id": "q2",
+      "step": 2,
+      "title": "月の手取り収入はどのくらいですか？",
+      "subtitle": "正確じゃなくてOK。だいたいで答えてください。",
+      "characterMessages": [
+        "答えづらかったら「だいたい」でOKです。診断結果には影響しないので、近い金額を選んでくださいね。"
+      ],
+      "options": [
+        { "value": "u20", "label": "〜20万円", "subtext": "まずは固定費から", "weights": { "A": 3, "D": 2, "E": 2 } },
+        { "value": "u30", "label": "20〜30万円", "subtext": "余裕を作りたい", "weights": { "A": 2, "B": 2, "D": 2 } },
+        { "value": "u40", "label": "30〜40万円", "subtext": "貯蓄も投資もしたい", "weights": { "B": 3, "C": 2 } },
+        { "value": "o40", "label": "40万円〜", "subtext": "資産形成フェーズ", "weights": { "B": 3, "C": 3, "E": 1 } },
+        { "value": "skip", "label": "答えたくない", "subtext": "スキップ", "weights": { "A": 1, "B": 1, "C": 1, "D": 1, "E": 1 } }
+      ]
+    },
+    {
+      "id": "q3",
+      "step": 3,
+      "title": "一番ストレスな支出はどれですか？",
+      "subtitle": "減らせるなら減らしたい、と思う項目を選んでください。",
+      "characterMessages": [
+        "ここがあなたの「節約のきき所」。一番ストレスな項目から手をつけるのが鉄則です。",
+        "ぼくの場合は通信費でした。楽天モバイルに変えてからは、毎月の請求書を見るストレスがなくなりました。"
+      ],
+      "options": [
+        { "value": "housing", "label": "住宅費", "subtext": "家賃・住宅ローン", "weights": { "A": 3 } },
+        { "value": "telecom", "label": "通信費", "subtext": "スマホ・ネット代", "weights": { "A": 3 } },
+        { "value": "insurance", "label": "保険", "subtext": "生命保険・医療保険", "weights": { "A": 3 } },
+        { "value": "food", "label": "食費・日用品", "subtext": "毎月のスーパー代", "weights": { "D": 3 } },
+        { "value": "utility", "label": "水道光熱費", "subtext": "電気・ガス・水道", "weights": { "A": 2, "D": 2 } },
+        { "value": "education", "label": "教育費", "subtext": "塾・習い事", "weights": { "A": 2, "D": 2 } },
+        { "value": "future", "label": "老後・将来資金", "subtext": "貯まらない不安", "weights": { "B": 3, "C": 2 } },
+        { "value": "none", "label": "とくにない／全般的に減らしたい", "subtext": "ぼんやり不安", "weights": { "D": 2, "E": 2 } }
+      ]
+    },
+    {
+      "id": "q4",
+      "step": 4,
+      "title": "いま、節約や資産形成でやっていることは？",
+      "subtitle": "あてはまるものを1つ選んでください。",
+      "characterMessages": [
+        "「何もしてない」は全然OK！むしろこの診断は何もしてない人にこそ役立ちます。"
+      ],
+      "options": [
+        { "value": "budget", "label": "家計簿をつけている", "subtext": "支出は把握できてる", "weights": { "B": 2, "C": 2 } },
+        { "value": "kakuyasu", "label": "格安SIMに変えた", "subtext": "通信費は最適化済み", "weights": { "B": 2, "C": 2 } },
+        { "value": "hoken", "label": "保険を見直した", "subtext": "保険料は適正化済み", "weights": { "B": 2, "C": 2 } },
+        { "value": "invest", "label": "投資をしている", "subtext": "NISAやiDeCo等", "weights": { "C": 3, "E": 2 } },
+        { "value": "study", "label": "勉強・副業を始めた", "subtext": "収入を増やしたい", "weights": { "E": 3, "B": 1 } },
+        { "value": "nothing", "label": "とくに何もしていない", "subtext": "これから始めたい", "weights": { "A": 3, "D": 3 } }
+      ]
+    },
+    {
+      "id": "q5",
+      "step": 5,
+      "title": "どんな改善を優先したいですか？",
+      "subtitle": "あなたのスタイルに合うものを選んでください。",
+      "characterMessages": [
+        "即効性のある節約と、長期で効く資産形成。両方大事ですが、まずどちらから始めるか？で進める道が変わります。"
+      ],
+      "options": [
+        { "value": "quick", "label": "今すぐ月数千円減らしたい", "subtext": "即効性重視", "weights": { "A": 3, "D": 2 } },
+        { "value": "long", "label": "10年後の資産を増やしたい", "subtext": "長期目線", "weights": { "B": 3, "C": 3 } },
+        { "value": "balance", "label": "両方バランスよく", "subtext": "欲張りタイプ", "weights": { "A": 1, "B": 1, "C": 1, "D": 1, "E": 1 } },
+        { "value": "income", "label": "そもそも収入を増やしたい", "subtext": "副業・転職志向", "weights": { "E": 3 } }
+      ]
+    }
+  ]
+}

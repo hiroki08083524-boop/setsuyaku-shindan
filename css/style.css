@@ -1,0 +1,13 @@
+/* 節約タイプ診断 カスタムスタイル */
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic UI', 'Meiryo', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.option-btn { will-change: transform; }
+.option-btn:active { transform: scale(0.98); }
+
+@media (max-width: 480px) {
+  h1 { letter-spacing: -0.02em; }
+}
