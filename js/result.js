@@ -76,7 +76,8 @@ function renderResult(top3, affiliates) {
       <a href="https://www.instagram.com/dacchooo_money/" target="_blank" rel="noopener" class="block w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-full transition">
         だっちょのインスタを見る
       </a>
-      <p class="text-xs text-gray-400 text-center mt-8">© だっちょ｜お金・投資・節約</p>
+      <p class="text-xs text-gray-400 text-center mt-8 leading-relaxed">※ 結果ページのリンク先には、広告（アフィリエイトリンク）を含むコンテンツがあります。</p>
+      <p class="text-xs text-gray-400 text-center mt-2">© だっちょ｜お金・投資・節約</p>
     </div>
   `;
 
