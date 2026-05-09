@@ -77,7 +77,12 @@ function renderResult(top3, affiliates) {
         だっちょのインスタを見る
       </a>
       <p class="text-xs text-gray-400 text-center mt-8 leading-relaxed">※ 結果ページのリンク先には、広告（アフィリエイトリンク）を含むコンテンツがあります。</p>
-      <p class="text-xs text-gray-400 text-center mt-2">© だっちょ｜お金・投資・節約</p>
+      <p class="text-xs text-gray-500 text-center mt-3 space-x-3">
+        <a href="about.html" class="hover:text-emerald-700 underline">運営者情報</a>
+        <a href="privacy.html" class="hover:text-emerald-700 underline">プライバシーポリシー</a>
+        <a href="terms.html" class="hover:text-emerald-700 underline">利用規約</a>
+      </p>
+      <p class="text-xs text-gray-400 text-center mt-3">© だっちょ｜お金・投資・節約</p>
     </div>
   `;
 
