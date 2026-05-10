@@ -4,6 +4,9 @@ const RANK_LABELS = ['🥇 1位', '🥈 2位', '🥉 3位'];
 const RANK_COLORS = ['border-emerald-600', 'border-emerald-400', 'border-emerald-300'];
 const TODAY = '2026-05-07';
 
+// LINE公式URL：Phase 1完了後に lin.ee/XXXXX 形式に置換（だっちょ確認後・要差し替え）
+const LINE_OFFICIAL_URL_BASE = 'https://lin.ee/PLACEHOLDER';
+
 async function initResult() {
   const ranking = getResultRanking();
   if (!ranking || ranking.length === 0) {
@@ -35,7 +38,7 @@ function renderResult(top3, affiliates) {
     .map(
       (msg) => `
       <div class="flex items-start gap-3 mb-3">
-        <img src="images/characters/dacchooo.svg" alt="だっちょ" class="w-12 h-12 rounded-full flex-shrink-0 border border-emerald-200 bg-white">
+        <img src="images/characters/dacchooo.png" alt="だっちょ" class="w-12 h-12 rounded-full flex-shrink-0 border border-emerald-200 bg-white">
         <div class="bg-white rounded-2xl px-4 py-3 shadow-sm border border-emerald-100 max-w-md text-sm leading-relaxed text-gray-700">${msg}</div>
       </div>`
     )
@@ -72,6 +75,9 @@ function renderResult(top3, affiliates) {
       </button>
       <a href="diagnose.html" class="block w-full text-center bg-white hover:bg-emerald-50 text-emerald-700 font-bold py-3 rounded-full border-2 border-emerald-200 transition mb-3">
         最初からやり直す
+      </a>
+      <a href="${LINE_OFFICIAL_URL_BASE}?from=setsuyaku&type=${first.id}" target="_blank" rel="noopener" class="block w-full text-center bg-[#06C755] hover:bg-[#05B04C] text-white font-bold py-3 rounded-full transition mb-3">
+        💚 LINEで続きの節約ネタを受け取る
       </a>
       <a href="https://www.instagram.com/dacchooo_money/" target="_blank" rel="noopener" class="block w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-full transition">
         だっちょのインスタを見る
@@ -131,7 +137,7 @@ function renderTypeCard(entry, index, affiliates) {
           <h4 class="text-base font-bold text-gray-800 mb-0.5">${a.name}</h4>
           <p class="text-xs text-emerald-700 font-bold mb-2">${a.tagline}</p>
           <div class="flex items-start gap-2 mb-3 p-2 bg-emerald-50 rounded-lg">
-            <img src="images/characters/dacchooo.svg" alt="だっちょ" class="w-7 h-7 rounded-full flex-shrink-0 border border-emerald-200 bg-white">
+            <img src="images/characters/dacchooo.png" alt="だっちょ" class="w-7 h-7 rounded-full flex-shrink-0 border border-emerald-200 bg-white">
             <p class="text-xs text-gray-700 leading-relaxed">${a.characterComment}</p>
           </div>
           <a href="${a.url}" target="_blank" rel="noopener sponsored" class="block w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm py-2.5 rounded-full transition">

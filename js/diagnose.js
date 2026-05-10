@@ -20,7 +20,7 @@ function renderStep() {
     .map(
       (msg) => `
       <div class="flex items-start gap-3 mb-3">
-        <img src="images/characters/dacchooo.svg" alt="だっちょ" class="w-12 h-12 rounded-full flex-shrink-0 border border-emerald-200 bg-white">
+        <img src="images/characters/dacchooo.png" alt="だっちょ" class="w-12 h-12 rounded-full flex-shrink-0 border border-emerald-200 bg-white">
         <div class="bg-white rounded-2xl px-4 py-3 shadow-sm border border-emerald-100 max-w-md text-sm leading-relaxed text-gray-700">${msg}</div>
       </div>`
     )
