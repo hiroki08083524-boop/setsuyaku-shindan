@@ -32,7 +32,7 @@
         { "step": 2, "title": "新NISA口座を開設", "description": "SBI証券か楽天証券が定番。手数料が安く取扱商品も豊富です。" },
         { "step": 3, "title": "インデックスファンドで積立スタート", "description": "S&P500やオルカンを月1万円から。継続が最強の武器です。" }
       ],
-      "recommendedAffiliates": ["gfs", "money-career-nisa"]
+      "recommendedAffiliates": ["gfs", "rakuten-shoken", "money-career-nisa"]
     },
     {
       "id": "C",
@@ -49,7 +49,7 @@
         { "step": 2, "title": "口座開設（複数社推奨）", "description": "案件は人気で抽選になることが多いので、2〜3社に登録しておくと当選率UP。" },
         { "step": 3, "title": "余裕資金で少しずつ", "description": "生活費と投資資金は分けて。最初は1〜3万円から試すのが安心です。" }
       ],
-      "recommendedAffiliates": ["torches", "rakutama"]
+      "recommendedAffiliates": ["torches", "rakutama", "capima"]
     },
     {
       "id": "D",
@@ -83,7 +83,7 @@
         { "step": 2, "title": "学びの環境を整える", "description": "オンラインスクールや無料体験から始めて、自分に合うジャンルを見つける。" },
         { "step": 3, "title": "小さく始めて続ける", "description": "副業はとにかく継続が命。最初の3ヶ月で「やめない仕組み」を作るのが鍵。" }
       ],
-      "recommendedAffiliates": ["skillskip", "gfs"]
+      "recommendedAffiliates": ["skillskip", "abcash", "gfs"]
     }
   ]
 }

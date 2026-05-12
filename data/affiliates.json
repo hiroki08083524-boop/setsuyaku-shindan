@@ -92,6 +92,45 @@
       ],
       "characterComment": "ぼくも過去に使いました。とにかく分かりやすいので、不動産クラファン入門として◎です。",
       "experienced": true
+    },
+    "rakuten-shoken": {
+      "name": "楽天証券",
+      "tagline": "新NISAも楽天ポイントも狙える総合ネット証券",
+      "category": "ネット証券",
+      "url": "https://dacchooo-money.com/rakutenshoken/",
+      "features": [
+        "新NISA口座も無料開設",
+        "楽天ポイントで投信積立",
+        "業界最低水準の手数料"
+      ],
+      "characterComment": "ぼくも実際に使ってます。楽天経済圏と合わせると、ポイントが資産になっていく感覚が気持ちいいです。",
+      "experienced": true
+    },
+    "capima": {
+      "name": "CAPIMA（キャピマ）",
+      "tagline": "少額から始められるクラファン投資",
+      "category": "クラウドファンディング投資",
+      "url": "https://dacchooo-money.com/fudosannkurafan/",
+      "features": [
+        "少額から投資可能",
+        "口座開設は無料",
+        "案件の多様性"
+      ],
+      "characterComment": "ぼくも口座開設しました。少額分散の選択肢が増えるのは、本業がある人ほど心強いです。",
+      "experienced": true
+    },
+    "abcash": {
+      "name": "ABCash（無料体験）",
+      "tagline": "お金の不安をプロに相談できる無料体験",
+      "category": "マネースクール（無料体験）",
+      "url": "https://dacchooo-money.com/abcash/",
+      "features": [
+        "完全無料の体験会",
+        "マンツーマン相談スタイル",
+        "オンラインで受講可能"
+      ],
+      "characterComment": "ぼくは無料体験だけ受けました。入会はしてませんが、お金の悩みをプロに直接相談できるのは価値があります。",
+      "experienced": true
     }
   }
 }
