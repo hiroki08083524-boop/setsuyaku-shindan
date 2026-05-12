@@ -1,12 +1,12 @@
 {
-  "_note": "全案件にPR表記必須。体験済み案件のみ掲載（feedback_unexperienced_affiliate_priority準拠）。リンクはインスタ・メイン用（m=mi1h5y31sj1f系）。",
-  "_lastUpdated": "2026-05-06",
+  "_note": "全案件にPR表記必須。体験済み案件のみ掲載（feedback_unexperienced_affiliate_priority準拠）。URLは原則だっちょブログ経由（dacchooo-money.com）→記事内にPR表記＋アフィリリンク。TORCHESは記事準備中。",
+  "_lastUpdated": "2026-05-12",
   "affiliates": {
     "gfs": {
       "name": "GFS無料講座",
       "tagline": "投資の基礎を無料動画でサクッと学べる",
       "category": "投資スクール（無料）",
-      "url": "https://dacchooo-money.com/bafessa/",
+      "url": "https://dacchooo-money.com/bafessa-2/",
       "features": [
         "完全無料の動画講座",
         "投資の基礎が体系的に学べる",
@@ -19,7 +19,7 @@
       "name": "スキルスキップ",
       "tagline": "副業デビューに最適なオンラインスクール",
       "category": "オンラインスクール",
-      "url": "https://skillskip.jp/lp1388",
+      "url": "https://dacchooo-money.com/skillskip/",
       "features": [
         "副業ノウハウを体系的に学べる",
         "無料体験から始められる",
@@ -32,7 +32,7 @@
       "name": "マネーキャリア（FP無料相談）",
       "tagline": "プロのFPに家計を見てもらえる無料相談",
       "category": "FP無料相談",
-      "url": "https://money-career.com/reserve_lp2?adid=first&source=ig&medium=dacchooo_money&campaign=stories",
+      "url": "https://dacchooo-money.com/money-career/",
       "features": [
         "完全無料で何度でも相談OK",
         "オンラインで自宅から完結",
@@ -45,7 +45,7 @@
       "name": "マネーキャリア（新NISA相談）",
       "tagline": "新NISAの始め方をプロに相談",
       "category": "FP無料相談・新NISA",
-      "url": "https://money-career.com/service/consultation/nisa?source=ig&medium=dacchooo_money&campaign=stories",
+      "url": "https://dacchooo-money.com/money-career/",
       "features": [
         "新NISAの口座開設から商品選びまで",
         "完全無料・オンライン対応",
@@ -58,7 +58,7 @@
       "name": "マネーキャリア（ライフプラン相談）",
       "tagline": "将来の家計シミュレーションを無料で",
       "category": "FP無料相談・ライフプラン",
-      "url": "https://money-career.com/service/consultation/lifeplan?source=ig&medium=dacchooo_money&campaign=stories",
+      "url": "https://dacchooo-money.com/money-career/",
       "features": [
         "将来の収支をシミュレーション",
         "教育費・老後資金の準備度がわかる",
@@ -84,7 +84,7 @@
       "name": "らくたま",
       "tagline": "気軽に始められる不動産クラファン",
       "category": "不動産クラウドファンディング",
-      "url": "https://stair-s.com/link.php?i=pi44h0dyxhrq&m=mi1h5y31sj1f",
+      "url": "https://dacchooo-money.com/rakutama/",
       "features": [
         "1万円から投資可能",
         "シンプルなUIで初心者向け",
