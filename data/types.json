@@ -15,7 +15,7 @@
         { "step": 2, "title": "保険を見直す", "description": "「なんとなく入ってる」保険、ありませんか？無料FP相談でムダを洗い出すのが近道です。" },
         { "step": 3, "title": "サブスクの棚卸し", "description": "動画配信・音楽・ジムなど、使ってないものを年1回チェック。" }
       ],
-      "recommendedAffiliates": ["money-career-default", "skillskip"]
+      "recommendedAffiliates": ["money-career-default", "money-career-lifeplan"]
     },
     {
       "id": "B",
@@ -66,7 +66,7 @@
         { "step": 2, "title": "1〜3ヶ月「見るだけ」", "description": "最初は記録するだけでOK。3ヶ月続けるとパターンが見えてきます。" },
         { "step": 3, "title": "FP無料相談で第三者視点", "description": "自分では気づかないムダを、プロに洗い出してもらうのが近道。無料です。" }
       ],
-      "recommendedAffiliates": ["money-career-lifeplan", "gfs"]
+      "recommendedAffiliates": ["money-career-lifeplan", "abcash"]
     },
     {
       "id": "E",
@@ -83,7 +83,7 @@
         { "step": 2, "title": "学びの環境を整える", "description": "オンラインスクールや無料体験から始めて、自分に合うジャンルを見つける。" },
         { "step": 3, "title": "小さく始めて続ける", "description": "副業はとにかく継続が命。最初の3ヶ月で「やめない仕組み」を作るのが鍵。" }
       ],
-      "recommendedAffiliates": ["skillskip", "abcash", "gfs"]
+      "recommendedAffiliates": ["skillskip", "gfs"]
     }
   ]
 }
