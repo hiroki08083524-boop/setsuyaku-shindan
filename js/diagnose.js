@@ -8,6 +8,7 @@ async function initDiagnose() {
   questions = await loadQuestions();
   answers = loadAnswers();
   currentStep = 0;
+  trackEvent('quiz_start', { total_questions: questions.length });
   renderStep();
 }
 
@@ -88,6 +89,10 @@ function onBack() {
 function finishDiagnose() {
   const ranking = computeRanking(answers, questions);
   saveResultRanking(ranking);
+  trackEvent('quiz_complete', {
+    top_type: ranking[0] ? ranking[0].id : null,
+    top_score: ranking[0] ? ranking[0].score : null,
+  });
   window.location.href = 'result.html';
 }
 

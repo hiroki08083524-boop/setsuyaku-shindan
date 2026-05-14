@@ -2,7 +2,8 @@
 
 const RANK_LABELS = ['🥇 1位', '🥈 2位', '🥉 3位'];
 const RANK_COLORS = ['border-emerald-600', 'border-emerald-400', 'border-emerald-300'];
-const TODAY = '2026-05-07';
+// 自動で今日の日付を表示（YYYY-MM-DD形式）
+const TODAY = new Date().toISOString().split('T')[0];
 
 // LINE公式URL：Phase 1完了後に lin.ee/XXXXX 形式に置換（だっちょ確認後・要差し替え）
 const LINE_OFFICIAL_URL_BASE = 'https://lin.ee/PLACEHOLDER';
@@ -27,6 +28,12 @@ async function initResult() {
   }
 
   document.title = `あなたは「${top3[0].type.name}」｜節約タイプ診断`;
+  trackEvent('result_view', {
+    top_type: top3[0].type.id,
+    top_type_name: top3[0].type.name,
+    second_type: top3[1] ? top3[1].type.id : null,
+    third_type: top3[2] ? top3[2].type.id : null,
+  });
   renderResult(top3, affiliates);
 }
 
@@ -73,13 +80,13 @@ function renderResult(top3, affiliates) {
       <button id="share-btn" class="block w-full bg-white hover:bg-emerald-50 text-emerald-700 font-bold py-3 rounded-full border-2 border-emerald-600 transition mb-3">
         📷 結果を画像で保存・SNSシェア
       </button>
-      <a href="diagnose.html" class="block w-full text-center bg-white hover:bg-emerald-50 text-emerald-700 font-bold py-3 rounded-full border-2 border-emerald-200 transition mb-3">
+      <a href="diagnose.html" id="restart-cta" class="block w-full text-center bg-white hover:bg-emerald-50 text-emerald-700 font-bold py-3 rounded-full border-2 border-emerald-200 transition mb-3">
         最初からやり直す
       </a>
-      <a href="${LINE_OFFICIAL_URL_BASE}?from=setsuyaku&type=${first.id}" target="_blank" rel="noopener" class="block w-full text-center bg-[#06C755] hover:bg-[#05B04C] text-white font-bold py-3 rounded-full transition mb-3">
+      <a href="${LINE_OFFICIAL_URL_BASE}?from=setsuyaku&type=${first.id}" id="line-cta" target="_blank" rel="noopener" class="block w-full text-center bg-[#06C755] hover:bg-[#05B04C] text-white font-bold py-3 rounded-full transition mb-3">
         💚 LINEで続きの節約ネタを受け取る
       </a>
-      <a href="https://www.instagram.com/dacchooo_money/" target="_blank" rel="noopener" class="block w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-full transition">
+      <a href="https://www.instagram.com/dacchooo_money/" id="insta-cta" target="_blank" rel="noopener" class="block w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-full transition">
         だっちょのインスタを見る
       </a>
       <p class="text-xs text-gray-400 text-center mt-8 leading-relaxed">※ 結果ページのリンク先には、広告（アフィリエイトリンク）を含むコンテンツがあります。</p>
@@ -97,12 +104,47 @@ function renderResult(top3, affiliates) {
     d.addEventListener('toggle', () => {
       const summary = d.querySelector('summary > .acc-arrow');
       if (summary) summary.textContent = d.open ? '▲' : '▼';
+      if (d.open) {
+        trackEvent('improvement_steps_open', { type_id: d.dataset.typeId || 'unknown' });
+      }
     });
   });
 
+  // アフィリリンクのクリック計測
+  root.querySelectorAll('a[data-affiliate-id]').forEach((a) => {
+    a.addEventListener('click', () => {
+      trackEvent('affiliate_click', {
+        affiliate_id: a.dataset.affiliateId,
+        affiliate_name: a.dataset.affiliateName,
+        type_id: a.dataset.typeId,
+      });
+    });
+  });
+
+  // LINE登録ボタンのクリック計測
+  const lineBtn = document.getElementById('line-cta');
+  if (lineBtn) {
+    lineBtn.addEventListener('click', () => {
+      trackEvent('line_signup_click', { top_type: top3[0].type.id });
+    });
+  }
+
+  // インスタリンクのクリック計測
+  const instaBtn = document.getElementById('insta-cta');
+  if (instaBtn) {
+    instaBtn.addEventListener('click', () => {
+      trackEvent('instagram_click', { top_type: top3[0].type.id });
+    });
+  }
+
   // 画像保存ボタン
   const shareBtn = document.getElementById('share-btn');
-  if (shareBtn) shareBtn.addEventListener('click', captureAndShare);
+  if (shareBtn) {
+    shareBtn.addEventListener('click', () => {
+      trackEvent('share_click', { top_type: top3[0].type.id });
+      captureAndShare();
+    });
+  }
 }
 
 function renderTypeCard(entry, index, affiliates) {
@@ -124,10 +166,10 @@ function renderTypeCard(entry, index, affiliates) {
     .join('');
 
   const affiliateCards = (t.recommendedAffiliates || [])
-    .map((id) => affiliates[id])
-    .filter(Boolean)
+    .map((id) => ({ id, data: affiliates[id] }))
+    .filter((x) => x.data)
     .map(
-      (a) => `
+      ({ id, data: a }) => `
       <article class="bg-white rounded-xl shadow-sm border border-emerald-100 overflow-hidden mb-3">
         <div class="p-4">
           <div class="flex items-center justify-between mb-1">
@@ -140,7 +182,7 @@ function renderTypeCard(entry, index, affiliates) {
             <img src="images/characters/dacchooo.png" alt="だっちょ" class="w-7 h-7 rounded-full flex-shrink-0 border border-emerald-200 bg-white">
             <p class="text-xs text-gray-700 leading-relaxed">${a.characterComment}</p>
           </div>
-          <a href="${a.url}" target="_blank" rel="noopener sponsored" class="block w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm py-2.5 rounded-full transition">
+          <a href="${a.url}" target="_blank" rel="noopener sponsored" data-affiliate-id="${id}" data-affiliate-name="${a.name}" data-type-id="${t.id}" class="block w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm py-2.5 rounded-full transition">
             詳しく見る →
           </a>
         </div>
@@ -162,7 +204,7 @@ function renderTypeCard(entry, index, affiliates) {
       <p class="text-xs text-emerald-700 font-bold mb-3">${t.tagline}</p>
       ${!isFirst ? `<p class="text-xs text-gray-600 mb-3 leading-relaxed">${t.summary}</p>` : ''}
 
-      <details class="steps-acc mb-4" ${detailsOpen}>
+      <details class="steps-acc mb-4" data-type-id="${t.id}" ${detailsOpen}>
         <summary class="cursor-pointer text-sm font-bold text-emerald-700 mb-2 list-none flex items-center gap-1">
           <span>改善のステップ</span>
           <span class="acc-arrow">${isFirst ? '▲' : '▼'}</span>
@@ -217,6 +259,7 @@ async function captureAndShare() {
             title: '節約タイプ診断',
             text: 'あなたの節約タイプは？診断はこちら👉',
           });
+          trackEvent('share_success', { method: 'web_share_api' });
           btn.textContent = originalText;
           btn.disabled = false;
           return;
@@ -234,6 +277,7 @@ async function captureAndShare() {
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
+      trackEvent('share_success', { method: 'download' });
       btn.textContent = '✅ 画像を保存しました！';
       setTimeout(() => {
         btn.textContent = originalText;

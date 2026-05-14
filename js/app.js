@@ -3,6 +3,18 @@
 const STORAGE_KEY = 'setsuyaku_answers';
 const DATA_BASE = 'data';
 
+// GA4イベント計測ユーティリティ
+// 使い方: trackEvent('quiz_start') / trackEvent('affiliate_click', { affiliate_id: 'gfs' })
+function trackEvent(eventName, params = {}) {
+  if (typeof window.gtag === 'function') {
+    try {
+      window.gtag('event', eventName, params);
+    } catch (e) {
+      // GA4が読み込まれていない場合は何もしない
+    }
+  }
+}
+
 async function loadJSON(path) {
   const res = await fetch(`${DATA_BASE}/${path}`);
   if (!res.ok) throw new Error(`Failed to load ${path}`);

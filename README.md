@@ -3,7 +3,7 @@
 5問の質問に答えるだけで、自分にぴったりの「家計改善ポイント」がわかる診断ツール。
 インスタ・ブログ・一斉配信からの動線として使える静的サイト。
 
-**🚀 本番URL：** https://hiroki08083524-boop.github.io/setsuyaku-shindan/
+**🚀 本番URL：** https://dacchooo.github.io/setsuyaku-shindan/
 
 ## 構成
 
@@ -93,7 +93,7 @@ mainにpushすると自動で再ビルド→反映される（数十秒）。
 git add .
 git commit -m "Update content"
 git push
-# → 数十秒後に https://hiroki08083524-boop.github.io/setsuyaku-shindan/ に反映
+# → 数十秒後に https://dacchooo.github.io/setsuyaku-shindan/ に反映
 ```
 
 ### 将来：Cloudflare Pages に移行する場合
